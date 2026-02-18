@@ -137,6 +137,9 @@ export class ClaudeSubprocess extends EventEmitter {
       "--model",
       options.model, // Model alias (opus/sonnet/haiku)
       "--no-session-persistence", // Don't save sessions
+      "--permission-mode", "acceptEdits", // Auto-approve file writes
+      "--add-dir", "/Users/leoatreidis", // Grant access to home directory
+      "--", // End-of-options separator (prevents --add-dir from swallowing prompt)
       prompt, // Pass prompt as argument (more reliable than stdin)
     ];
 
